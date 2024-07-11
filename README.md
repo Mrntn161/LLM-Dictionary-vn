@@ -36,6 +36,8 @@ Vào settings trên Obsidian, tìm kiếm `look up` và chọn phím tắt mà b
 
 Sau khi thực hiện các bước trên, khi bạn bôi đen một từ hoặc cụm từ bất kì và dùng phím tắt đã thiết lập từ trước, LLM Dictionary sẽ tra cứu và hiện thị kết quả tại right sidebar.
 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=BYW3WAPD9Eg)
+
 ## Tính năng chuyển văn bản thành giọng nói
 
 Ngoài việc tra cứu từ vựng, LLM Dictionary còn có một tính năng vô cùng hữu ích khác: chuyển văn bản thành giọng nói. Tính năng này sẽ giúp bạn nghe được cách phát âm của từ vựng một cách chính xác, từ đó giúp bạn cải thiện kỹ năng nghe và nói của mình.
