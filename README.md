@@ -1,12 +1,10 @@
-# LLM-Dictionary
-
 ## Giới thiệu
 
-LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng của 4 ngôn ngữ: Anh, Trung, Nhật, Hàn. Tuy nhiên, điểm mạnh của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
+LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng. Một trong những tính năng thú vị nhất của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh dựa bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
 
-Một trong những tính năng thú vị nhất của LLM Dictionary là khả năng tra cứu trên PDF. Với tính năng này, bạn có thể đọc và tra cứu từ vựng ngay trong PDF, giúp bạn tiết kiệm thời gian và công sức.
+Ngoài ra LLM Dictionary hỗ trợ nhiều ngôn ngữ (bao gồm Anh, Trung, Nhật, Hàn, và có thể bổ sung trong tương lai) và tra cứu từ vựng trên file PDF. Với tính năng này, bạn có thể đọc và tra cứu từ vựng ngay trong PDF, giúp bạn tiết kiệm thời gian và công sức.
 
-Ngoài ra, LLM Dictionary còn có thể được sử dụng chung với plugin Obsidian to Anki để tạo flashcards. Tức là sau khi tra cứu được từ vựng, bạn có thể tạo flashcards ngay lập tức để ghi nhớ lâu dài. Điều này sẽ giúp bạn học ngoại ngữ một cách hiệu quả hơn.
+LLM Dictionary còn có thể được sử dụng chung với plugin Obsidian to Anki để tạo flashcards. Tức là sau khi tra cứu được từ vựng, bạn có thể tạo flashcards ngay lập tức để ghi nhớ lâu dài. Điều này sẽ giúp bạn học ngoại ngữ một cách hiệu quả hơn.
 
 ## Cách thức cài đặt
 
@@ -50,7 +48,7 @@ Tính năng chuyển văn bản thành giọng nói của LLM Dictionary có nhi
 - Không có giới hạn về thời gian cũng như số kí tự.
 - Chỉ cần mua một lần và không chịu bất kì khoản phí nào thêm.
 
-## Cách save lại từ vựng đã tra cứu trên Obsidian
+## Cách lưu lại từ vựng đã tra cứu trên Obsidian
 
 Tại mục "Save" trên sidebar, bạn có thể tìm thấy một vài thiết lập cơ bản để lưu lại từ vựng.
 LLM Dictionary sẽ giúp lưu lại từ vựng dưới dạng các notes trong Obsidian. Mỗi field tương ứng với một thông tin của từ vựng. Lưu ý, các field `{{Audio}}`, `{{Example Audio 1}}`, `{{Example Audio 2}}`, `{{Example Audio 3}}` chỉ có hiệu lực khi bạn mở khoá tính năng chuyển văn bản thành giọng nói.
@@ -59,7 +57,7 @@ Tại mục "Save" trên sidebar, bạn có thể tìm thấy một vài thiết
 
 ### Cấu hình cơ bản
 
-Khi lưu lại từ vựng, bạn có thể cấu hình các field để phù hợp với nhu cầu của mình. Lưu ý, các field `{{Audio}}`, `{{Example Audio 1}}`, `{{Example Audio 2}}`, `{{Example Audio 3}}` chỉ có hiệu lực khi bạn mở khoá tính năng chuyển văn bản thành giọng nói.
+Trước khi lưu lại từ vựng, bạn phải cấu hình nơi lưu trữ note, audio và nội dung của note dựa trên các field cho sẵn. Lưu ý, các field `{{Audio}}`, `{{Example Audio 1}}`, `{{Example Audio 2}}`, `{{Example Audio 3}}` chỉ có hiệu lực khi bạn mở khoá tính năng chuyển văn bản thành giọng nói.
 
 ![](https://i.imgur.com/NMYUaec.png)
 
@@ -79,6 +77,7 @@ Khi lưu lại từ vựng bạn nên sử dụng đến field `{{Source}}` đ�
 ## Đồng bộ và lưu từ vựng vào Anki
 
 Mục này mình sẽ hướng dẫn cơ bản cách thiết lập note để lưu vào Anki, tuy nhiên mình sẽ không đi sâu vào chi tiết hướng dẫn cách sử dụng Anki. Mục tiêu là giúp bạn lưu từ vựng vào Anki thông qua plugin Obsidian-to-Anki.
+
 ![](https://i.imgur.com/PJzhKZ6.png)
 
 Bước 1: Cài đặt addon [AnkiConnect](https://ankiweb.net/shared/info/2055492159) trên Anki
@@ -126,6 +125,25 @@ Kết quả
 
 ![](https://i.imgur.com/KQXmkXd.png)
 
-Do đó ta có thể thiết kế template khi save note theo mẫu sau để lưu lại từ vựng đã tra cứu
+Do đó ta có thể thiết kế template khi save note theo mẫu sau để lưu lại từ vựng đã tra cứu đồng bộ với Anki
 
-![](https://i.imgur.com/zbSSl1O.png)
+```
+---
+source: "{{Source}}"
+---
+
+START
+Vocabulary
+{{ID}}
+Term: {{Term}}
+Definition: {{Definition}}
+IPA: {{IPA}}
+Audio: {{Audio}}
+POS: {{Part_of_speech}}
+Example:
+
+- {{Example Audio 1}} {{Example 1}}
+- {{Example Audio 2}} {{Example 2}}
+- {{Example Audio 3}} {{Example 3}}
+END
+```
