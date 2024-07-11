@@ -40,17 +40,25 @@ Sau khi thực hiện các bước trên, khi bạn bôi đen một từ hoặc 
 
 Ngoài việc tra cứu từ vựng, LLM Dictionary còn có một tính năng vô cùng hữu ích khác: chuyển văn bản thành giọng nói. Tính năng này sẽ giúp bạn nghe được cách phát âm của từ vựng một cách chính xác, từ đó giúp bạn cải thiện kỹ năng nghe và nói của mình.
 
-Tuy nhiên, để sử dụng được tính năng này, bạn cần bỏ ra một số tiền nhỏ. Với chỉ 300k, bạn có thể sử dụng được tính năng chuyển văn bản thành giọng mà không có giới hạn về thời gian cũng như số kí tự. Đây là một khoản đầu tư nhỏ so với hiệu quả mà bạn sẽ nhận được.
+Tuy nhiên, để sử dụng được tính năng này, bạn cần bỏ ra một số tiền nhỏ. Với chỉ 300k, bạn có thể sử dụng được tính năng chuyển văn bản thành giọng nói mà không có giới hạn về thời gian cũng như số kí tự. Đây là một khoản đầu tư nhỏ so với hiệu quả mà bạn sẽ nhận được.
 
 Tính năng chuyển văn bản thành giọng nói của LLM Dictionary có nhiều ưu điểm, bao gồm:
 
-- Giúp bạn nghe được cách phát âm của từ vựng và câu với nhiều giọng đọc khác nhau.
+- Giúp bạn nghe được cách phát âm của từ vựng và câu với nhiều giọng đọc tự nhiên khác nhau.
 - Không có giới hạn về thời gian cũng như số kí tự.
 - Chỉ cần mua một lần và không chịu bất kì khoản phí nào thêm.
+- Mở khoá tính năng này cũng là một cách để hỗ trợ người viết plugin có thêm kinh phí để duy trì và bổ sung thêm tính năng cho dự án trong tương lai.
+
+### Phương thức thanh toán và donate
+
+Để nhận mã kích hoạt tính năng TTS hoặc donate, bạn có thể chuyển tiền thông qua tài khoản ngân hàng bên dưới và liên hệ thông qua trang [Facebook](https://www.facebook.com/profile.php?id=100093832307685) của mình. Bạn cần lưu lại thông tin chuyển khoản để mình xác nhận.
+
+![](https://i.imgur.com/1fYoKyS.png)
 
 ## Cách lưu lại từ vựng đã tra cứu trên Obsidian
 
 Tại mục "Save" trên sidebar, bạn có thể tìm thấy một vài thiết lập cơ bản để lưu lại từ vựng.
+
 LLM Dictionary sẽ giúp lưu lại từ vựng dưới dạng các notes trong Obsidian. Mỗi field tương ứng với một thông tin của từ vựng. Lưu ý, các field `{{Audio}}`, `{{Example Audio 1}}`, `{{Example Audio 2}}`, `{{Example Audio 3}}` chỉ có hiệu lực khi bạn mở khoá tính năng chuyển văn bản thành giọng nói.
 
 Tại mục "Save" trên sidebar, bạn có thể tìm thấy một vài thiết lập cơ bản để lưu lại từ vựng. LLM Dictionary sẽ giúp lưu lại từ vựng dưới dạng các notes trong Obsidian. Mỗi field tương ứng với một thông tin của từ vựng.
@@ -72,6 +80,7 @@ Trước khi lưu lại từ vựng, bạn phải cấu hình nơi lưu trữ no
 ### Tip
 
 Khi lưu lại từ vựng bạn nên sử dụng đến field `{{Source}}` để thuận tiện cho việc ôn tập. Ví dụ những từ vựng này được tra cứu trong một note có tên là Daily Vocab. Khi mình xem lại note này, mình có thể dựa vào liên kết mà field `{{Source}}` để lại mà biết được mình đã tra cứu những từ nào.
+
 ![](https://i.imgur.com/dFa3c97.png)
 
 ## Đồng bộ và lưu từ vựng vào Anki
@@ -81,6 +90,7 @@ Mục này mình sẽ hướng dẫn cơ bản cách thiết lập note để l�
 ![](https://i.imgur.com/PJzhKZ6.png)
 
 Bước 1: Cài đặt addon [AnkiConnect](https://ankiweb.net/shared/info/2055492159) trên Anki
+
 Bước 2: Thiết lập trên AnkiConnect theo mẫu sau
 
 ```json
@@ -131,9 +141,8 @@ Do đó ta có thể thiết kế template khi save note theo mẫu sau để l�
 ---
 source: "{{Source}}"
 ---
-
 START
-Vocabulary
+Vocab
 {{ID}}
 Term: {{Term}}
 Definition: {{Definition}}
@@ -141,9 +150,9 @@ IPA: {{IPA}}
 Audio: {{Audio}}
 POS: {{Part_of_speech}}
 Example:
-
 - {{Example Audio 1}} {{Example 1}}
 - {{Example Audio 2}} {{Example 2}}
 - {{Example Audio 3}} {{Example 3}}
 END
+
 ```
