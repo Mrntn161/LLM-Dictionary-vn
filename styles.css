@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#dictionary-view .callout {
+    position: relative;
+    border-left: 5px solid #007BFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+/* .callout:hover {
+    transform: scale(1.05);
+} */
+
+#dictionary-view .callout-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#dictionary-view .callout-text {
+    color: #666;
+}
+
+#dictionary-view .callout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.callout-audio {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.tab-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tab-bar {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* .tab-link:hover {
+    background-color: #ddd;
+} */
+
+/* .tab-link.active {
+    background-color: #ccc;
+} */
+
+.tab-content {
+    padding: 20px;
+    /* border: 1px solid #ccc;
+    border-top: none; */
+}
+
+.dict-inp {
+    width: 90%;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    background: var(--background-modifier-form-field);
+    border: var(--input-border-width) solid var(--background-modifier-border);
+    color: var(--text-normal);
+}
+
+#dict-note-content {
+    height: 50vh;
+    width: 95%;
+}
+
+.dict-audio {
+    margin: 0 3px;
+}
+
+.dict-example {
+    padding: 0;
+}
+
+.dict-example li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+
+/* #dictionary-view {
+    overflow-y: scroll;
+} */
+
+#dictionary-view {
+    user-select: text;
+}
+
+:root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #2b2b2b;
+    --text-color-light: #000000;
+    --text-color-dark: #ffffff;
+    --accent-color-light: #007BFF;
+    --accent-color-dark: #1E90FF;
+    --callout-background-light: #f0f0f0;
+    --callout-background-dark: #3b3b3b;
+}
+
+#dictionary-view .callout {
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    background-color: var(--callout-background-light);
+    border-left: 5px solid var(--accent-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#dictionary-view .callout.dark-mode {
+    background-color: var(--callout-background-dark);
+    border-left: 5px solid var(--accent-color-dark);
+    color: var(--text-color-dark);
+}
+
+#dictionary-view .view-content {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--accent-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#dictionary-view .callout.dark-mode .button {
+    background-color: var(--accent-color-dark);
+    color: var(--text-color-dark);
+}
+
+#dictionary-view .callout .button:hover {
+    background-color: darken(var(--accent-color-light), 10%);
+}
+
+#dictionary-view .callout.dark-mode .button:hover {
+    background-color: darken(var(--accent-color-dark), 10%);
+}
+
+#dictionary-view-container {
+    overflow-y: scroll !important;
+}
