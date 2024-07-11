@@ -1,6 +1,6 @@
 ## Giới thiệu
 
-LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng. Một trong những tính năng thú vị nhất của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh dựa bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
+LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng. Một trong những tính năng thú vị nhất của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
 
 Ngoài ra LLM Dictionary hỗ trợ nhiều ngôn ngữ (bao gồm Anh, Trung, Nhật, Hàn, và có thể bổ sung trong tương lai) và tra cứu từ vựng trên file PDF. Với tính năng này, bạn có thể đọc và tra cứu từ vựng ngay trong PDF, giúp bạn tiết kiệm thời gian và công sức.
 
