@@ -2,7 +2,7 @@
 
 ## Giới thiệu
 
-LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng của 4 ngôn ngữ: Anh, Trung, Nhật, Hàn. Tuy nhiên, điểm mạnh của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh dựa bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
+LLM Dictionary là một plugin trên Obsidian hỗ trợ tra cứu từ vựng của 4 ngôn ngữ: Anh, Trung, Nhật, Hàn. Tuy nhiên, điểm mạnh của LLM Dictionary so với các từ điển thông thường là khả năng tra cứu từ vựng theo ngữ cảnh bằng AI. Thay vì chỉ đưa ra các định nghĩa cho sẵn trong từ điển, LLM Dictionary có thể đưa ra các định nghĩa dựa trên ngữ cảnh, giúp người dùng hiểu được nghĩa của từ một cách chính xác và sát với thực tế.
 
 Một trong những tính năng thú vị nhất của LLM Dictionary là khả năng tra cứu trên PDF. Với tính năng này, bạn có thể đọc và tra cứu từ vựng ngay trong PDF, giúp bạn tiết kiệm thời gian và công sức.
 
@@ -66,6 +66,7 @@ Khi lưu lại từ vựng, bạn có thể cấu hình các field để phù h�
 Đây là một setup mẫu và kết quả.
 
 ![](https://i.imgur.com/D3IJtFP.png)
+
 ![](https://i.imgur.com/P5m9QLj.png)
 
 ![](https://i.imgur.com/jVTd9sr.png)
@@ -99,6 +100,7 @@ Bước 3: Thiết kế note trên Obsidian theo cú pháp nhất định để 
 
 ### Cú pháp cơ bản
 
+```
 START
 Note type
 nội dung của field đầu tiên
@@ -108,6 +110,7 @@ field C:
 nội dung của field C
 (bạn có thể để thông tin của field xuống dòng mà không nhất thiết để trên cùng một hàng)
 END
+```
 
 ### Ví dụ
 
