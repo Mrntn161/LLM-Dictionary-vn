@@ -8,7 +8,7 @@ LLM Dictionary còn có thể được sử dụng chung với plugin Obsidian t
 
 ## Cách thức cài đặt
 
-(Video hướng dẫn)[https://youtu.be/BYW3WAPD9Eg]
+[Video hướng dẫn](https://youtu.be/BYW3WAPD9Eg)
 
 **Bước 1: Cài đặt plugin BRAT trên Obsidian**
 
