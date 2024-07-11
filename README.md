@@ -64,6 +64,7 @@ Khi lưu lại từ vựng, bạn có thể cấu hình các field để phù h�
 ![](https://i.imgur.com/NMYUaec.png)
 
 Đây là một setup mẫu và kết quả.
+
 ![](https://i.imgur.com/D3IJtFP.png)
 ![](https://i.imgur.com/P5m9QLj.png)
 
@@ -111,13 +112,17 @@ END
 ### Ví dụ
 
 Đây là một note type "Vocab" với các field "Id", "Term", "Definition", ...
+
 ![](https://i.imgur.com/aKulpW5.png)
 
 Vậy nội dung của note để nhập vào Anki sẽ như sau
+
 ![](https://i.imgur.com/ZRi7u2k.png)
 
 Kết quả
+
 ![](https://i.imgur.com/KQXmkXd.png)
 
 Do đó ta có thể thiết kế template khi save note theo mẫu sau để lưu lại từ vựng đã tra cứu
+
 ![](https://i.imgur.com/zbSSl1O.png)
