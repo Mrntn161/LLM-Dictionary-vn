@@ -158,3 +158,5 @@ Example:
 END
 
 ```
+
+[Video kết nối Obsidian với Anki](https://youtu.be/QSXhmcb2FME)
