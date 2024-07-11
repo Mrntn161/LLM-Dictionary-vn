@@ -61,27 +61,23 @@ Tại mục "Save" trên sidebar, bạn có thể tìm thấy một vài thiết
 
 Khi lưu lại từ vựng, bạn có thể cấu hình các field để phù hợp với nhu cầu của mình. Lưu ý, các field `{{Audio}}`, `{{Example Audio 1}}`, `{{Example Audio 2}}`, `{{Example Audio 3}}` chỉ có hiệu lực khi bạn mở khoá tính năng chuyển văn bản thành giọng nói.
 
-![[Assets/Pasted image 20240711102325.png]]
+![](https://i.imgur.com/NMYUaec.png)
 
 Đây là một setup mẫu và kết quả.
+![](https://i.imgur.com/D3IJtFP.png)
+![](https://i.imgur.com/P5m9QLj.png)
 
-()[./Assets/Pasted image 20240711102618.png]
-![[Assets/Pasted image 20240711102618.png]]
-![[Assets/Pasted image 20240711102706.png]]
-
-![[Assets/Pasted image 20240711102805.png]]
+![](https://i.imgur.com/jVTd9sr.png)
 
 ### Tip
 
 Khi lưu lại từ vựng bạn nên sử dụng đến field `{{Source}}` để thuận tiện cho việc ôn tập. Ví dụ những từ vựng này được tra cứu trong một note có tên là Daily Vocab. Khi mình xem lại note này, mình có thể dựa vào liên kết mà field `{{Source}}` để lại mà biết được mình đã tra cứu những từ nào.
-
-![[Assets/Pasted image 20240711103200.png]]
+![](https://i.imgur.com/dFa3c97.png)
 
 ## Đồng bộ và lưu từ vựng vào Anki
 
 Mục này mình sẽ hướng dẫn cơ bản cách thiết lập note để lưu vào Anki, tuy nhiên mình sẽ không đi sâu vào chi tiết hướng dẫn cách sử dụng Anki. Mục tiêu là giúp bạn lưu từ vựng vào Anki thông qua plugin Obsidian-to-Anki.
-
-![[Assets/Pasted image 20240711103926.png]]
+![](https://i.imgur.com/PJzhKZ6.png)
 
 Bước 1: Cài đặt addon [AnkiConnect](https://ankiweb.net/shared/info/2055492159) trên Anki
 Bước 2: Thiết lập trên AnkiConnect theo mẫu sau
@@ -115,17 +111,13 @@ END
 ### Ví dụ
 
 Đây là một note type "Vocab" với các field "Id", "Term", "Definition", ...
-
-![[Assets/Pasted image 20240711104928.png]]
+![](https://i.imgur.com/aKulpW5.png)
 
 Vậy nội dung của note để nhập vào Anki sẽ như sau
-
-![[Assets/Pasted image 20240711105926.png]]
+![](https://i.imgur.com/ZRi7u2k.png)
 
 Kết quả
-
-![[Assets/Pasted image 20240711110028.png]]
+![](https://i.imgur.com/KQXmkXd.png)
 
 Do đó ta có thể thiết kế template khi save note theo mẫu sau để lưu lại từ vựng đã tra cứu
-
-![[Assets/Pasted image 20240711110206.png]]
+![](https://i.imgur.com/zbSSl1O.png)
