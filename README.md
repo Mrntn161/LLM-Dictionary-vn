@@ -36,7 +36,7 @@ Vào settings trên Obsidian, tìm kiếm `look up` và chọn phím tắt mà b
 
 Sau khi thực hiện các bước trên, khi bạn bôi đen một từ hoặc cụm từ bất kì và dùng phím tắt đã thiết lập từ trước, LLM Dictionary sẽ tra cứu và hiện thị kết quả tại right sidebar.
 
-[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=BYW3WAPD9Eg)
+<iframe width="741" height="422" src="https://www.youtube.com/embed/BYW3WAPD9Eg" title="install" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Tính năng chuyển văn bản thành giọng nói
 
