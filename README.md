@@ -87,9 +87,7 @@ Khi lưu lại từ vựng bạn nên sử dụng đến field `{{Source}}` đ�
 
 ## Đồng bộ và lưu từ vựng vào Anki
 
-Mục này mình sẽ hướng dẫn cơ bản cách thiết lập note để lưu vào Anki, tuy nhiên mình sẽ không đi sâu vào chi tiết hướng dẫn cách sử dụng Anki. Mục tiêu là giúp bạn lưu từ vựng vào Anki thông qua plugin Obsidian-to-Anki.
-
-![](https://i.imgur.com/PJzhKZ6.png)
+Mục này mình sẽ hướng dẫn cơ bản cách thiết lập note để lưu vào Anki, tuy nhiên mình sẽ không đi sâu vào chi tiết hướng dẫn cách sử dụng Anki. Mục tiêu là giúp bạn lưu từ vựng vào Anki.
 
 Bước 1: Cài đặt addon [AnkiConnect](https://ankiweb.net/shared/info/2055492159) trên Anki
 
@@ -107,56 +105,26 @@ Bước 2: Thiết lập trên AnkiConnect theo mẫu sau
 }
 ```
 
-Bước 3: Thiết kế note trên Obsidian theo cú pháp nhất định để nhập vào Anki
+Bước 3: Vào setting trên LLM-Dictionary, bật "Save the vocabulary to Anki"
 
-### Cú pháp cơ bản
+![](https://i.imgur.com/ru8GU0k.png)
 
-```
-START
-Note type
-nội dung của field đầu tiên
-field A: nội dung của field A
-field B: nội dung của field B
-field C:
-nội dung của field C
-(bạn có thể để thông tin của field xuống dòng mà không nhất thiết để trên cùng một hàng)
-END
-```
+Bước 4: Tra từ và lưu lại từ. Lúc này, giao diên "save" sẽ có chút thay đổi.
 
-### Ví dụ
+![](https://i.imgur.com/fVbeXn4.png)
 
-Đây là một note type "Vocab" với các field "Id", "Term", "Definition", ...
+Bước 5: Nhập Anki Note Type và nhấn Get Fields. Lưu ý "AnkiConnect" sẽ mất kết nối sau một khoản thời gian nếu bạn vào Anki. Nếu cảm thấy lâu bạn nên nhấn vào biểu tượng Anki. Bạn phải đảm bảo truy xuất được toàn bộ field của note type trước khi sang bước tiếp theo.
 
-![](https://i.imgur.com/aKulpW5.png)
+![](https://i.imgur.com/eMgtwqZ.png)
 
-Vậy nội dung của note để nhập vào Anki sẽ như sau
+![](https://i.imgur.com/EGJp7rU.png)
 
-![](https://i.imgur.com/ZRi7u2k.png)
+Bước 6: Nhập thông tin bạn muốn đưa vào từng field của Note Type và nhấn "Save to Anki"
 
-Kết quả
+![](https://i.imgur.com/3b5pGkk.png)
 
-![](https://i.imgur.com/KQXmkXd.png)
+![](https://i.imgur.com/twIsqZu.png)
 
-Do đó ta có thể thiết kế template khi save note theo mẫu sau để lưu lại từ vựng đã tra cứu đồng bộ với Anki
+Sau khi đã đồng bộ với Anki, bạn có thể vào note để cập nhật, mở flashcard trên anki, hoặc xóa anki flashcards
 
-```
----
-source: "{{Source}}"
----
-START
-Vocab
-{{ID}}
-Term: {{Term}}
-Definition: {{Definition}}
-IPA: {{IPA}}
-Audio: {{Audio}}
-POS: {{Part_of_speech}}
-Example:
-- {{Example Audio 1}} {{Example 1}}
-- {{Example Audio 2}} {{Example 2}}
-- {{Example Audio 3}} {{Example 3}}
-END
-
-```
-
-[Video kết nối Obsidian với Anki](https://youtu.be/QSXhmcb2FME)
+![](https://i.imgur.com/lj9n5EJ.png)
