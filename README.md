@@ -113,7 +113,7 @@ Bước 4: Tra từ và lưu lại từ. Lúc này, giao diên "save" sẽ có c
 
 ![](https://i.imgur.com/fVbeXn4.png)
 
-Bước 5: Nhập Anki Note Type và nhấn Get Fields. Lưu ý "AnkiConnect" sẽ mất kết nối sau một khoản thời gian nếu bạn vào Anki. Nếu cảm thấy lâu bạn nên nhấn vào biểu tượng Anki. Bạn phải đảm bảo truy xuất được toàn bộ field của note type trước khi sang bước tiếp theo.
+Bước 5: Nhập Anki Note Type và nhấn Get Fields. Lưu ý "AnkiConnect" sẽ mất kết nối sau một khoản thời gian nếu bạn không vào Anki. Nếu cảm thấy quá trình "Get Fields" lâu bạn nên nhấn vào lại Anki app. Bạn phải đảm bảo truy xuất được toàn bộ field của note type trước khi sang bước tiếp theo.
 
 ![](https://i.imgur.com/eMgtwqZ.png)
 
