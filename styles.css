@@ -115,10 +115,6 @@
 }
 
 
-/* #dictionary-view {
-    overflow-y: scroll;
-} */
-
 #dictionary-view {
     user-select: text;
 }
@@ -176,6 +172,7 @@
 #dictionary-view-container {
     overflow-y: scroll !important;
 }
+
 .hide {
     display: none;
 }
@@ -183,4 +180,8 @@
 .whisper-correct {
     background-color: transparent;
     color: green;
+}
+
+.modal {
+    user-select: text;
 }
