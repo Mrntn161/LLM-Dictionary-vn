@@ -151,7 +151,7 @@
         }
         t.textToSpeech = async (n, r = {}) => {
             if (0 == e) return void console.log("");
-            console.log(n);
+            if (!n) return
             let a = "en-US-AndrewMultilingualNeural",
                 i = "10%";
             r && r.voice && (a = r.voice.split(" ")[0]), r && r.rate && r.rate;
