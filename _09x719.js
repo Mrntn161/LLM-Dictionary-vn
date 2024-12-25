@@ -1,4 +1,26 @@
 (async () => {
+
+function stopAllPlayingAudio() {
+    // Get all <audio> elements in the page
+    const audioElements = document.querySelectorAll('audio');
+
+    // Iterate over each audio element
+    audioElements.forEach(audio => {
+        // Check if the audio is currently playing
+        if (!audio.paused && !audio.ended) {
+            // Pause the audio
+            audio.pause();
+
+            // Optionally reset the playback position
+            audio.currentTime = 0;
+        }
+    });
+
+    console.log("All playing audio elements have been stopped.");
+}
+
+// Example usage
+stopAllPlayingAudio();
 await setUp(voice);
 async function setUp (voice) {
     try {
