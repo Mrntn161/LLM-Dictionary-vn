@@ -56,6 +56,8 @@ Tính năng chuyển văn bản thành giọng nói của LLM Dictionary có nhi
 Để nhận mã kích hoạt tính năng TTS hoặc donate, bạn có thể chuyển tiền thông qua tài khoản ngân hàng bên dưới và liên hệ thông qua trang [Facebook](https://www.facebook.com/profile.php?id=100093832307685) của mình. Bạn cần lưu lại thông tin chuyển khoản để mình xác nhận.
 
 ![](https://i.imgur.com/1fYoKyS.png)
+![](https://i.ibb.co/v4kQkztL/bmc-qr.png)
+
 
 ## Cách lưu lại từ vựng đã tra cứu trên Obsidian
 
@@ -129,5 +131,5 @@ Sau khi đã đồng bộ với Anki, bạn có thể vào note để cập nh�
 
 ![](https://i.imgur.com/lj9n5EJ.png)
 
-Buy me a coffee 
-![](https://ibb.co/wh4w46vp)
+
+
