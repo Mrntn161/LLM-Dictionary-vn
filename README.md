@@ -56,7 +56,7 @@ Tính năng chuyển văn bản thành giọng nói của LLM Dictionary có nhi
 Để nhận mã kích hoạt tính năng TTS hoặc donate, bạn có thể chuyển tiền thông qua tài khoản ngân hàng bên dưới và liên hệ thông qua trang [Facebook](https://www.facebook.com/profile.php?id=100093832307685) của mình. Bạn cần lưu lại thông tin chuyển khoản để mình xác nhận.
 
 ![](https://i.imgur.com/1fYoKyS.png)
-![bmc-qr.png](https://postimg.cc/LhsJ9Zsf)
+![img](https://i.postimg.cc/J7NZQNVT/bmc-qr.png)
 
 
 ## Cách lưu lại từ vựng đã tra cứu trên Obsidian
