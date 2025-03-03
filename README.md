@@ -128,3 +128,6 @@ Bước 6: Nhập thông tin bạn muốn đưa vào từng field của Note Typ
 Sau khi đã đồng bộ với Anki, bạn có thể vào note để cập nhật, mở flashcard trên anki, hoặc xóa anki flashcards
 
 ![](https://i.imgur.com/lj9n5EJ.png)
+
+Buy me a coffee 
+![](https://ibb.co/wh4w46vp)
