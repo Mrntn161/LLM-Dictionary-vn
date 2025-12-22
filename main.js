@@ -4140,40 +4140,100 @@ function uuid() {
 
 
 async function tts_fix(text, voice) {
-    await installCDN("https://cdn.jsdelivr.net/gh/Mrntn161/langki_anki/edge_tts.js", "edge_tts");
-    let EdgeTTS = BrowserEdgeTTS
-    const tts = new EdgeTTS(text, voice); // pick voice
-    const result = await tts.synthesize();
-    return result
+  const idoau = "6lgF14lExT" + '90ZwDa1pF4HyYQHAZwOnvMH5rh4bYlC2stpEz1FPqKJQQJ99BLACYeBjFXJ3w3AAAYACOGXfjH';
+  const idoauy = 'eastus'; 
 
-    async function installCDN(link, tagId) {
-        try {
-            let isRun = (() => {
-                let nameStore = `installCDN-${tagId}`
-                const now = Date.now();
-                const lastCall = parseInt(localStorage.getItem(nameStore) || '0', 10);
-                
-                if (now - lastCall < 100) {
-                    return false;
-                }
-                
-                localStorage.setItem(nameStore, now.toString());
-                return true;
-            })();
-            if (!isRun) return
-            if (document.getElementById(tagId)) return
-            let url = link
-            const response = await fetch(url);
-            let scriptContent = await response.text();
-            let script = document.createElement('script');
-            script.setAttribute("id", tagId)
-            script.text = scriptContent;
-            document.body.prepend(script);
-            return tagId
-        } catch (e) {
-            console.error(e)
+  if (!idoau || !idoauy) {
+    throw new Error('Chưa cấu hình idoau hoặc idoauy trong tts_fix.');
+  }
+
+  // Tải Azure Speech SDK cho browser (UMD bundle)
+  await installCDN('https://aka.ms/csspeech/jsbrowserpackageraw', 'azure_speech_sdk');
+
+  const SpeechSDK = window.SpeechSDK;
+  if (!SpeechSDK) {
+    throw new Error('Không tìm thấy window.SpeechSDK sau khi load Azure SDK.');
+  }
+
+  return await new Promise((resolve, reject) => {
+    try {
+      const speechConfig = SpeechSDK.SpeechConfig.fromSubscription(
+        idoau,
+        idoauy
+      );
+
+      if (voice) {
+        // voice là tên voice Azure, ví dụ: 'vi-VN-HoaiMyNeural'
+        speechConfig.speechSynthesisVoiceName = voice;
+      }
+
+      const audioConfig = SpeechSDK.AudioConfig.fromDefaultSpeakerOutput();
+      const synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig, audioConfig);
+
+      synthesizer.speakTextAsync(
+        text,
+        (result) => {
+          try {
+            if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
+              // Azure trả về audioData (ArrayBuffer / Uint8Array)
+              const audioData = result.audioData;
+              const blob = new Blob([audioData], { type: 'audio/wav' });
+              resolve({ audio: blob, rawResult: result });
+            } else {
+              console.error('Azure TTS canceled or failed:', result);
+              reject(new Error('Azure TTS canceled or failed.'));
+            }
+          } catch (e) {
+            reject(e);
+          } finally {
+            synthesizer.close();
+          }
+        },
+        (err) => {
+          console.error('Azure TTS error:', err);
+          synthesizer.close();
+          reject(err);
         }
-    }  
+      );
+    } catch (e) {
+      reject(e);
+    }
+  });
+
+  async function installCDN(link, tagId) {
+    try {
+      let isRun = (() => {
+        let nameStore = `installCDN-${tagId}`;
+        const now = Date.now();
+        const lastCall = parseInt(localStorage.getItem(nameStore) || '0', 10);
+
+        if (now - lastCall < 100) {
+          return false;
+        }
+
+        localStorage.setItem(nameStore, now.toString());
+        return true;
+      })();
+      if (!isRun) return;
+      // Nếu script đã tồn tại thì thôi
+      if (document.getElementById(tagId)) return;
+
+      // Tạo thẻ <script src="..."> để tránh CORS khi fetch nội dung
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.id = tagId;
+        script.src = link; // ví dụ: https://aka.ms/csspeech/jsbrowserpackageraw
+        script.async = true;
+        script.onload = () => resolve(tagId);
+        script.onerror = (err) => reject(err);
+        document.head.appendChild(script);
+      });
+
+      return tagId;
+    } catch (e) {
+      console.error(e);
+    }
+  }
 }
 async function setupLang(e) {
   e.addOption('English', 'English')
@@ -4228,6 +4288,7 @@ async function textToSpeech(e, t) {
     let text = e
     let voice = t
     let a = await tts_fix(text, voice);
+    console.log("a", a)
     let audioData = a.audio
     // Get or create the TTS container
     let container = document.getElementById("tts-container");
@@ -4246,7 +4307,8 @@ async function textToSpeech(e, t) {
     // Build audio element using the object URL
     const audioElement = document.createElement("audio");
     audioElement.controls = true;
-    audioElement.autoplay = true;
+  // Không autoplay để tránh trùng với tiếng phát trực tiếp từ Azure SDK
+  audioElement.autoplay = false;
     audioElement.src = audioUrl;
 
     // Clear previous content and append the new audio element
@@ -6745,7 +6807,7 @@ async function eng2(e, t, n) {
             '{\n"Term": "when you\'re ready",\n"Part_of_speech": "cụm từ",\n"Definition": "khi bạn đã sẵn sàng",\n"IPA": "/wen juər ˈredi/",\n"Examples": [\n"**When you\'re ready**, start the engine.",\n"**When you\'re ready**, let me know and we\'ll begin.",\n"**When you\'re ready**, delete this note and make the vault your own."\n]\n}',
         },
       ],
-      model: 'llama3-70b-8192',
+      model:"meta-llama/llama-4-maverick-17b-128e-instruct",
       temperature: 0,
       max_tokens: 1024,
       top_p: 1,
@@ -6848,7 +6910,7 @@ async function ja(e, t, n) {
             '{\n"Term": "対象",\n"Hiragana": "たいしょう",\n"Definition": "đối tượng, mục tiêu",\n"Examples": [\n"この**たいしょう**は非常に重要です\u3002",\n"彼女は**たいしょう**の研究をしている\u3002",\n"あの会社は**たいしょう**の市場を目指しています\u3002"\n],\n"Part_of_speech": "danh từ"\n}',
         },
       ],
-      model: 'llama3-70b-8192',
+      model:"meta-llama/llama-4-maverick-17b-128e-instruct",
       temperature: 0,
       max_tokens: 1024,
       top_p: 1,
@@ -6961,7 +7023,7 @@ async function korean(e, t, n) {
             '{\n  "Term": "공부",\n  "Hanja": "學習",\n  "Definition": "học tập, nghiên cứu",\n  "Examples": [\n    "가: 한국어 **공부**가 어때요? 나: 어렵지만 재미있어요.",\n    "저는 컴퓨터 **공부**를 하고 싶어요.",\n    "저는 언어 **공부**를 열심히 했습니다."\n  ],\n  "Part_of_speech": "danh từ"\n}\n',
         },
       ],
-      model: 'llama3-70b-8192',
+      model:"meta-llama/llama-4-maverick-17b-128e-instruct",
       temperature: 0,
       max_tokens: 1024,
       top_p: 1,
@@ -7074,7 +7136,7 @@ async function chinese(e, t, n) {
             '{\n"Term": "传",\n"Pinyin": "chuán",\n"Definition": "truyền, truyền lại",\n"Examples": [\n"这个故事被**传**了下来\u3002",\n"他**传**授了我们很多有用的经验\u3002",\n"这个消息被**传**遍了整个城市\u3002"\n],\n"Part_of_speech": "động từ"\n}',
         },
       ],
-      model: 'llama3-70b-8192',
+      model:"meta-llama/llama-4-maverick-17b-128e-instruct",
       temperature: 0,
       max_tokens: 1024,
       top_p: 1,
@@ -7739,12 +7801,18 @@ async function anki_add(e, t, n) {
         '---\n<button class="anki-btn-open">Open</button> | <button class="anki-btn-update">Update</button> | <button class="anki-btn-delete">Delete</button>\n'
       )
   await this.app.vault.modify(e, r)
-  let a = { t: await render(n) }
+
+  let fields = {}
   for (let e of s) {
-    let t = e.split('\n')[0],
-      n = e.split('\n').slice(1).join('\n')
+    let lines = e.split('\n');
+    let t = lines[0];              
+    let n = lines.slice(1).join('\n'); 
+    fields[t] = await render(n)
   }
-  let o = await addNote(n, a, t, [])
+
+  let deckName = n
+  let modelName = t
+  let o = await addNote(deckName, fields, modelName, [])
   this.app.fileManager.processFrontMatter(e, (e) => {
     e.Anki = `${o}`
     e['Anki-deck'] = `${n}`
@@ -7769,12 +7837,16 @@ async function anki_update(e) {
         `[[${e.path.replace('.md', '')}|${e.basename}]]`
       )
     ))
-  let s = { t: await render(n) }
-  for (let e of i) {
-    let t = e.split('\n')[0],
-      n = e.split('\n').slice(1).join('\n')
+
+  let fields = {}
+  let s = i;
+  for (let e of s) {
+    let lines = e.split('\n');
+    let t = lines[0];              
+    let n = lines.slice(1).join('\n'); 
+    fields[t] = await render(n)
   }
-  await updateNote(Number(t), s)
+  await updateNote(Number(t), fields)
 }
 async function anki_delete(e) {
   let t = this.app.metadataCache.getFileCache(e).frontmatter.Anki
@@ -8060,7 +8132,7 @@ async function translation(e) {
               'Trong một làng quê xinh đẹp, có một nhóm người chăm chỉ và tốt bụng sinh sống. Làng được bao quanh bởi núi non xanh tươi và nước trong, cảnh sắc như tranh vẽ. Mỗi khi sáng sớm, ngay khi mặt trời vừa mới lên, người dân trong làng bắt đầu một ngày lao động. Có người đi lao động trên đồng ruộng, có người đi hái lượm trên núi, còn có người bận rộn trong cửa hàng nhỏ tại cổng làng.',
           },
         ],
-        model: 'llama3-70b-8192',
+        model:"meta-llama/llama-4-maverick-17b-128e-instruct",
         temperature: 0,
         max_tokens: 1250,
         top_p: 1,
